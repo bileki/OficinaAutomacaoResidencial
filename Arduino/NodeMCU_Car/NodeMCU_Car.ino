@@ -5,16 +5,18 @@
 #define IN_3  2           // L298N in3 motors Left            GPIO2(D4)
 #define IN_4  0           // L298N in4 motors Left            GPIO0(D3)
 
-#include <WiFi.h>
+
+//NO ESP32 ALTERAR O ESP8266WiFi e ESP8266WebServer PARA Wifi E WebServer, RESPECTIVAMENTE
+#include <ESP8266WiFi.h>
 #include <WiFiClient.h> 
-#include <WebServer.h>
+#include <ESP8266WebServer.h>
 
 String command;             //String to store app command state.
 int speedCar = 800;         // 400 - 1023.
 int speed_Coeff = 3;
 
 const char* ssid = "NodeMCU Car";
-WebServer server(80);
+ESP8266WebServer server(80);
 
 void setup() {
  
